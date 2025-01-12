@@ -15,13 +15,10 @@ import { useThemeStore } from "./store/useThemeStore";
 export default function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
   const { theme } = useThemeStore();
-  console.log({theme});
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-
-  console.log(authUser);
 
   if (isCheckingAuth && !authUser) {
     return (
